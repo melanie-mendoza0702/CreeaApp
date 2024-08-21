@@ -1,0 +1,105 @@
+/* src/components/SignUpClient.css */
+
+.signup-container {
+    background-color: var(--color-azul-navy);
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blanco);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite desplazamiento vertical */
+}
+
+.signup-box {
+    background-color: var(--color-azure);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para pantallas más grandes */
+    padding: 20px 15px; /* Espaciado interno */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    max-height: 80vh; /* Ajustamos la altura máxima para asegurar que el botón sea visible */
+    overflow-y: auto; /* Permite desplazamiento interno si es necesario */
+}
+
+.signup-box h2 {
+    font-size: 22px; /* Tamaño del título ajustado */
+    margin-bottom: 20px;
+    color: var(--color-blanco);
+}
+
+.signup-input {
+    width: 100%;
+    height: 40px; /* Altura consistente para los inputs */
+    margin-bottom: 15px; /* Espaciado entre inputs */
+    border-radius: 8px;
+    border: 1px solid var(--color-blanco);
+    padding-left: 10px;
+    font-size: 16px; /* Tamaño de fuente ajustado */
+    color: var(--color-azul-navy);
+    box-sizing: border-box;
+}
+
+.signup-input::placeholder {
+    color: #B0B0B0; /* Color del placeholder */
+}
+
+.signup-button {
+    width: 100%;
+    height: 45px; /* Altura del botón */
+    background-color: var(--color-amarillo-canario);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px; /* Tamaño de fuente del botón */
+    color: var(--color-azul-navy);
+    cursor: pointer;
+    margin-top: 20px;
+    position: sticky; /* Botón de registro se mantiene visible */
+    bottom: 0; /* Fijamos el botón al fondo */
+}
+
+.signup-button:hover {
+    opacity: 0.9;
+}
+
+.login-link {
+    margin-top: 15px; /* Espaciado superior */
+    font-size: 14px;
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.login-link:hover {
+    color: var(--color-azul-tiffany);
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        padding: 15px 10px; /* Espaciado reducido en pantallas pequeñas */
+    }
+
+    .signup-input {
+        height: 35px; /* Altura reducida para inputs en pantallas pequeñas */
+        font-size: 14px; /* Fuente reducida para inputs en pantallas pequeñas */
+    }
+
+    .signup-button {
+        height: 40px; /* Altura reducida para el botón en pantallas pequeñas */
+        font-size: 16px; /* Fuente reducida para el botón en pantallas pequeñas */
+    }
+
+    .signup-box h2 {
+        font-size: 20px; /* Tamaño del título reducido en pantallas pequeñas */
+    }
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}

@@ -1,0 +1,46 @@
+/* src/components/HomePage.css */
+
+.home-page {
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: var(--color-blanco);
+}
+
+.home-page p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: var(--color-blanco);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-amarillo-canario);
+    color: var(--color-azul-navy);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button.secondary {
+    background-color: var(--color-azul-tiffany);
+}
+
+button:hover {
+    opacity: 0.8;
+}

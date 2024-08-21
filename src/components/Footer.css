@@ -1,0 +1,24 @@
+/* src/components/Footer.css */
+
+.app-footer {
+    background-color: var(--color-azul-navy);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.app-footer p {
+    margin: 5px 0;
+}
+
+.app-footer a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.app-footer a:hover {
+    color: var(--color-azul-tiffany);
+}

@@ -1,24 +1,60 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import UserTypeSelection from './components/UserTypeSelection';
+import LogIn from './components/LogIn';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
+import SignUpAdvisor from './components/SignUpAdvisor';
+import SignUpClient from './components/SignUpClient';
+import Sidebar from './components/Sidebar';
+import ClientHome from './components/ClientDashboard';
+import GeneralInfo from './components/GeneralInfo';
+import Products from './components/Products';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/user-type-selection" element={<UserTypeSelection />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/signup-advisor" element={<SignUpAdvisor />} />
+          <Route path="/signup-client" element={<SignUpClient />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/client-home" element={<ClientHome />} />
+          <Route path="/general-info" element={<GeneralInfo />} />
+          <Route path="/products" element={<Products />} />
+          
+          {/* Rutas que incluyen el Sidebar */}
+          <Route 
+            path="/dashboard/*" 
+            element={
+              <div className="dashboard-container">
+                <Sidebar />
+                <div className="content">
+                  {/* Aquí puedes definir subrutas específicas del dashboard */}
+                  <Routes>
+                    {/* Ejemplo de subrutas */}
+                    <Route path="informacion-general" element={<div>Información General</div>} />
+                    <Route path="cuenta" element={<div>Cuenta</div>} />
+                    <Route path="agenda-calendario" element={<div>Agenda/Calendario</div>} />
+                    <Route path="pizarron-interactivo" element={<div>Pizarrón Interactivo</div>} />
+                    <Route path="mis-seguros" element={<div>Mis Seguros</div>} />
+                    <Route path="mis-pagos" element={<div>Mis Pagos</div>} />
+                  </Routes>
+                </div>
+              </div>
+            } 
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

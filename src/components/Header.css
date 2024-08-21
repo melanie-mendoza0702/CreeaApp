@@ -1,0 +1,65 @@
+/* src/components/Header.css */
+
+.app-header {
+    background-color: var(--color-azul-navy);
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+.logo-img {
+    height: 80px; /* Ajusta el tamaño según lo necesites */
+    margin-right: 15px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0; /* Asegura que no haya márgenes extras en la lista */
+    padding: 0; /* Elimina el padding por defecto */
+}
+
+.nav-links li {
+    font-size: 20px;
+}
+
+.nav-links a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--color-azul-tiffany);
+}
+
+/* Estilos de botones */
+button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-amarillo-canario);
+    color: var(--color-azul-navy);
+    border: none;
+    border-radius: 8px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+
+button.secondary {
+    background-color: var(--color-azul-tiffany);
+}
+
+button:hover {
+    opacity: 0.8;
+}
