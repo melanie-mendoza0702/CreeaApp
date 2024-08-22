@@ -6,12 +6,19 @@ import UserTypeSelection from './components/UserTypeSelection';
 import LogIn from './components/LogIn';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
+import VerifyCode from './components/VerifyCode';
 import SignUpAdvisor from './components/SignUpAdvisor';
 import SignUpClient from './components/SignUpClient';
 import Sidebar from './components/Sidebar';
 import ClientHome from './components/ClientDashboard';
 import GeneralInfo from './components/GeneralInfo';
 import Products from './components/Products';
+import ProductDetail from './components/ProductDetail';
+import WhatIs from './components/WhatIs';
+import HowItWorks from './components/HowItWorks';
+import GeneralConditions from './components/GeneralConditions';
+import FAQ from './components/FAQ';
+import Documents from './components/Documents';
 
 import './App.css';
 
@@ -27,10 +34,17 @@ function App() {
           <Route path="/signup-client" element={<SignUpClient />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/verify-code" element={<VerifyCode />} />
           <Route path="/client-home" element={<ClientHome />} />
           <Route path="/general-info" element={<GeneralInfo />} />
           <Route path="/products" element={<Products />} />
-          
+          <Route path="/product-detail/:productName" element={<ProductDetail />} />
+          <Route path="/product/:productName/what-is" element={<WhatIs />} />
+          <Route path="/product/:productName/how-it-works" element={<HowItWorks />} />
+          <Route path="/product/:productName/general-conditions" element={<GeneralConditions />} />
+          <Route path="/product/:productName/faq" element={<FAQ />} />
+          <Route path="/product/:productName/documents" element={<Documents />} />
+
           {/* Rutas que incluyen el Sidebar */}
           <Route 
             path="/dashboard/*" 

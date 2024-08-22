@@ -1,32 +1,38 @@
-.products-container {
-    background-color: var(--color-azul-navy);
+/* Products.css */
+
+.products {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 60vh;
-    color: var(--color-blanco);
-    padding: 20px;
+    height: 60vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    background-color: var(--color-azul-navy); /* Color de fondo general */
 }
 
-.products-container h2 {
+.products h2 {
+    color: var(--color-blanco); /* Color del texto del título */
     font-size: 36px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.products-container button {
-    width: 80%;
-    max-width: 300px;
-    height: 50px;
-    background-color: var(--color-azul-tiffany);
+.products button {
+    background-color: var(--color-azul-tiffany); /* Fondo de los botones */
+    color: var(--color-blanco); /* Color del texto de los botones */
     border: none;
-    border-radius: 10px;
+    padding: 15px 25px;
+    margin: 10px 0; /* Espaciado entre botones */
+    border-radius: 10px; /* Esquinas redondeadas */
     font-size: 20px;
-    color: var(--color-azul-navy);
-    margin: 10px 0;
     cursor: pointer;
+    width: 200px; /* Ancho consistente para todos los botones */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el fondo */
 }
 
-.products-container button:hover {
-    background-color: var(--color-azure);
+.products button:hover {
+    background-color: var(--color-azure); /* Cambiar color al pasar el mouse */
+}
+
+.products button:focus {
+    outline: none; /* Elimina el borde del enfoque */
 }

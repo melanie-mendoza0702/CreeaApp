@@ -1,0 +1,30 @@
+/* src/components/ProductSection.css */
+
+.product-section {
+    background-color: var(--color-azul-navy);
+    color: var(--color-blanco);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    background-color: var(--color-azure);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.content-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}

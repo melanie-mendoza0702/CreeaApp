@@ -1,6 +1,7 @@
-// src/components/LogIn.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 import './LogIn.css';
 
 const LogIn = () => {
@@ -26,42 +27,46 @@ const LogIn = () => {
     };
 
     return (
-        <div className="login-container">
-            <div className="login-box">
-                <h2>Log In</h2>
-                <input
-                    type="text"
-                    placeholder="Usuario"
-                    className="login-input"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    type="password"
-                    placeholder="Contraseña"
-                    className="login-input"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <select
-                    className="login-select"
-                    value={userType}
-                    onChange={(e) => setUserType(e.target.value)}
-                >
-                    <option value="cliente">Cliente</option>
-                    <option value="asesor">Asesor</option>
-                    <option value="promotor">Promotor</option>
-                </select>
-                <button className="login-button" onClick={handleLogin}>
-                    Ingresar
-                </button>
-                <a href="/forgot-password" className="forgot-password">
-                    ¿Olvidaste tu contraseña?
+        <div className="App">
+            <Header />
+            <div className="login-container">
+                <div className="login-box">
+                    <h2>Log In</h2>
+                    <input
+                        type="text"
+                        placeholder="Usuario"
+                        className="login-input"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <input
+                        type="password"
+                        placeholder="Contraseña"
+                        className="login-input"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <select
+                        className="login-select"
+                        value={userType}
+                        onChange={(e) => setUserType(e.target.value)}
+                    >
+                        <option value="cliente">Cliente</option>
+                        <option value="asesor">Asesor</option>
+                        <option value="promotor">Promotor</option>
+                    </select>
+                    <button className="login-button" onClick={handleLogin}>
+                        Ingresar
+                    </button>
+                    <a href="/forgot-password" className="forgot-password">
+                        ¿Olvidaste tu contraseña?
+                    </a>
+                </div>
+                <a href="/register" className="register-link">
+                    ¿No tienes cuenta? Regístrate
                 </a>
             </div>
-            <a href="/register" className="register-link">
-                ¿No tienes cuenta? Regístrate
-            </a>
+            <Footer />
         </div>
     );
 };

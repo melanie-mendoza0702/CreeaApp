@@ -1,0 +1,59 @@
+.product-detail-container {
+    background-color: var(--color-azul-navy); /* Color de fondo principal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 60vh; /* Para ocupar una parte de la altura de la pantalla */
+    color: var(--color-blanco); /* Color de texto */
+}
+
+.product-detail-box {
+    background-color: var(--color-azure); /* Fondo del contenedor */
+    padding: 40px;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.product-detail-box h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--color-blanco); /* Color del título */
+}
+
+.product-detail-button {
+    background-color: var(--color-azul-tiffany); /* Fondo de los botones */
+    color: var(--color-blanco); /* Color del texto de los botones */
+    border: none;
+    padding: 15px 25px;
+    margin: 10px 0; /* Espaciado entre botones */
+    border-radius: 10px; /* Esquinas redondeadas */
+    font-size: 20px;
+    cursor: pointer;
+    width: 200px; /* Ancho consistente para todos los botones */
+    text-align: center;
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el fondo */
+}
+
+.product-detail-button:hover {
+    background-color: #29CFC5; /* Un tono más claro para el hover */
+}
+
+.product-detail-button:active {
+    background-color: #337BC2; /* Cambio de color al hacer clic */
+}
+
+@media (max-width: 600px) {
+    .product-detail-box {
+        padding: 20px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .product-detail-button {
+        font-size: 16px; /* Reduce el tamaño del texto en pantallas más pequeñas */
+        height: 45px; /* Ajusta la altura en pantallas pequeñas */
+    }
+}

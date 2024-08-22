@@ -1,4 +1,3 @@
-// src/components/SignUpClient.js
 import React, { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
@@ -34,77 +33,82 @@ const SignUpClient = () => {
         });
     };
 
+    const validateDate = (dateStr) => {
+        const regex = /^\d{4}-\d{2}-\d{2}$/;
+        return regex.test(dateStr);
+    };
+
     const validate = () => {
         let tempErrors = {};
 
-        // RQNF1: Validar Nombre Completo
+        // Validar Nombre Completo
         if (!/^[A-Za-z\s]{1,255}$/.test(formData.nombreCompleto)) {
             tempErrors.nombreCompleto = 'Nombre completo debe contener solo letras y espacios, sin caracteres especiales ni números, y tener máximo 255 caracteres.';
         }
 
-        // RQNF2: Validar Fecha de Nacimiento
-        if (!/^\d{2}\/\d{2}\/\d{4}$/.test(formData.fechaNacimiento)) {
-            tempErrors.fechaNacimiento = 'La fecha de nacimiento debe estar en formato DD/MM/AAAA.';
+        // Validar Fecha de Nacimiento en formato YYYY-MM-DD
+        if (!validateDate(formData.fechaNacimiento)) {
+            tempErrors.fechaNacimiento = 'La fecha de nacimiento debe estar en formato YYYY-MM-DD (Ejemplo: 2005-07-02).';
         }
 
-        // RQNF3: Validar Nacionalidad
+        // Validar Nacionalidad
         if (!/^[A-Za-z\s]{1,55}$/.test(formData.nacionalidad)) {
             tempErrors.nacionalidad = 'Nacionalidad debe contener solo letras y espacios, y tener máximo 55 caracteres.';
         }
 
-        // RQNF4: Validar Ocupación o Profesión
+        // Validar Ocupación o Profesión
         if (!/^[A-Za-z0-9\s]{1,55}$/.test(formData.ocupacion)) {
             tempErrors.ocupacion = 'Ocupación o Profesión debe contener solo letras, números y espacios, y tener máximo 55 caracteres.';
         }
 
-        // RQNF5: Validar Sexo
+        // Validar Sexo
         if (!['Mujer', 'Hombre'].includes(formData.sexo)) {
             tempErrors.sexo = 'Debe seleccionar "Mujer" o "Hombre" en el campo Sexo.';
         }
 
-        // RQNF6: Validar Estado Civil
+        // Validar Estado Civil
         if (!['Soltero', 'Casado'].includes(formData.estadoCivil)) {
             tempErrors.estadoCivil = 'Debe seleccionar "Soltero" o "Casado" en el campo Estado Civil.';
         }
 
-        // RQNF7: Validar Domicilio Completo
+        // Validar Domicilio Completo
         if (!formData.domicilio || formData.domicilio.length > 255) {
             tempErrors.domicilio = 'Domicilio completo debe contener máximo 255 caracteres.';
         }
 
-        // RQNF8: Validar Correo Electrónico
+        // Validar Correo Electrónico
         if (!/^[\w-\.]+@gmail\.com$/.test(formData.correo) || formData.correo.length > 100) {
             tempErrors.correo = 'Correo electrónico debe tener una terminación @gmail.com válida y máximo 100 caracteres.';
         }
 
-        // RQNF9: Validar Giro, Actividad u Objeto Social
+        // Validar Giro, Actividad u Objeto Social
         if (!formData.giro || formData.giro.length > 255) {
             tempErrors.giro = 'Giro, actividad u objeto social debe contener máximo 255 caracteres.';
         }
 
-        // RQNF10: Validar Especificar brevemente el tipo de actividad
+        // Validar Especificar brevemente el tipo de actividad
         if (!formData.tipoActividad || formData.tipoActividad.length > 255) {
             tempErrors.tipoActividad = 'El tipo de actividad debe contener máximo 255 caracteres.';
         }
 
-        // RQNF11: Validar Entidad Federativa de nacimiento
+        // Validar Entidad Federativa de nacimiento
         if (!formData.entidadFederativa) {
             tempErrors.entidadFederativa = 'Debe seleccionar una entidad federativa válida.';
         }
 
-        // RQNF12: Validar Ingresos Anuales
+        // Validar Ingresos Anuales
         if (!/^\d{1,10}$/.test(formData.ingresosAnuales)) {
             tempErrors.ingresosAnuales = 'Ingresos anuales debe ser un número de máximo 10 dígitos.';
         }
 
-        // RQNF13: Validar Hábitos Toxicológicos
+        // Validar Hábitos Toxicológicos
         if (!['Sí', 'No'].includes(formData.habitosToxicos)) {
             tempErrors.habitosToxicos = 'Debe seleccionar "Sí" o "No" en el campo Hábitos Toxicológicos.';
         } else if (formData.habitosToxicos === 'Sí' && (!formData.especificarHabitos || formData.especificarHabitos.length > 255)) {
             tempErrors.especificarHabitos = 'Debe especificar el hábito y contener máximo 255 caracteres.';
         }
 
-        // RQNF14: Validar Contraseña
+        // Validar Contraseña
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])(?=.{8,})/.test(formData.password)) {
             tempErrors.password = 'La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula, una minúscula, un número y un carácter especial.';
         }
@@ -144,7 +148,7 @@ const SignUpClient = () => {
                         <input
                             type="text"
                             name="fechaNacimiento"
-                            placeholder="Fecha de nacimiento (DD/MM/AAAA)"
+                            placeholder="Fecha de nacimiento (YYYY-MM-DD)"
                             className="signup-input"
                             value={formData.fechaNacimiento}
                             onChange={handleChange}
