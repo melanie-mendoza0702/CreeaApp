@@ -5,14 +5,14 @@
      display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
     color: var(--color-blanco);
     padding: 20px;
 }
 
 .user-type-box {
     background-color: var(--color-azure);
-    width: 400px; /* Reducimos un poco el ancho para mejor proporción */
+    width: 500px; /* Reducimos un poco el ancho para mejor proporción */
     padding: 40px;
     border-radius: 20px; /* Esquinas redondeadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@
 
 .user-button {
     width: 150px;
-    height: 45px; /* Ajuste de altura para mejor proporción */
+    height: 65px; /* Ajuste de altura para mejor proporción */
     background-color: var(--color-amarillo-canario);
     border: none;
     border-radius: 8px; /* Esquinas redondeadas */

@@ -1,45 +1,48 @@
 /* src/components/SignUpAdvisor.css */
 
-.signup-container {
+.signupadvisor-container {
     background-color: var(--color-azul-navy);
+    height: 80vh; /* Ajuste para ocupar toda la altura de la pantalla */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Centrar verticalmente el contenedor */
     color: var(--color-blanco);
-    padding: 10px;
-    margin-top: -50px;
+    padding: 20px; /* Asegura un poco de espacio dentro del contenedor */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho/alto */
 }
 
-.signup-box {
+.signupadvisor-box {
     background-color: var(--color-azure);
-    width: 100px;
-    padding: 20px;
+    width: 500px; /* Aumentado para un tamaño más amplio */
+    padding: 20px; /* Ajustado para un mejor diseño */
     border-radius: 20px; /* Esquinas redondeadas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
 }
 
-.signup-box h2 {
+.signupadvisor-box h2 {
     font-size: 24px;
     margin-bottom: 30px;
     color: var(--color-blanco);
 }
 
-.signup-input {
+.signupadvisor-input {
     width: 100%;
     height: 45px;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reducción del margen inferior para mejor ajuste */
     border-radius: 8px;
     border: none;
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 16px; /* Ajuste del tamaño de fuente */
     color: var(--color-azul-navy);
+    box-sizing: border-box; /* Asegura que el padding no desborde el input */
 }
 
-.signup-button {
+.signupadvisor-button {
     width: 100%;
-    height: 45px;
+    height: 50px; /* Aumento de la altura para mejor clicabilidad */
     background-color: var(--color-amarillo-canario);
     border: none;
     border-radius: 8px; /* Esquinas redondeadas */
@@ -47,6 +50,10 @@
     color: var(--color-azul-navy);
     cursor: pointer;
     margin-top: 20px;
+}
+
+.signupadvisor-button:hover {
+    background-color: var(--color-azul-tiffany); /* Cambio de color en hover */
 }
 
 .login-link {

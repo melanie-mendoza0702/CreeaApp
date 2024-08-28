@@ -12,7 +12,7 @@ const WhatIs = () => {
             <Header />
             <div className="content-container">
                 <h2>¿Qué es {productName}?</h2>
-                <p>Aquí va la información específica de "¿Qué es?" para {productName}.</p>
+                <p>"¿Qué es?" para {productName}.</p>
             </div>
             <Footer />
         </div>

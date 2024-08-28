@@ -1,15 +1,16 @@
-// src/components/SignUpAdvisor.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import './SignUpAdvisor.css';
+import './SignUpPromoter.css';
 
-const SignUpAdvisor = () => {
+const SignUpPromoter = () => {
     const [formData, setFormData] = useState({
-        nombreCompleto: '',
         correo: '',
-        numeroIdentificacion: '',
+        nombreCompleto: '',
+        nombrePromotoria: '',
+        zona: '',
+        numeroPromotoria: '',
         password: ''
     });
 
@@ -27,19 +28,29 @@ const SignUpAdvisor = () => {
     const validate = () => {
         let tempErrors = {};
 
-        // Validar Nombre Completo
-        if (!/^[A-Za-z\s]{1,255}$/.test(formData.nombreCompleto)) {
-            tempErrors.nombreCompleto = 'Nombre completo debe contener solo letras y espacios, y tener máximo 255 caracteres.';
-        }
-
         // Validar Correo Electrónico
         if (!/^[\w-.]+@gmail\.com$/.test(formData.correo) || formData.correo.length > 100) {
             tempErrors.correo = 'Correo electrónico debe tener una terminación @gmail.com válida y máximo 100 caracteres.';
         }
 
-        // Validar Número de Identificación
-        if (!/^\d{1,5}$/.test(formData.numeroIdentificacion)) {
-            tempErrors.numeroIdentificacion = 'Número de Identificación Personal debe ser un número de máximo 5 dígitos.';
+        // Validar Nombre Completo
+        if (!/^[A-Za-z\s]{1,255}$/.test(formData.nombreCompleto)) {
+            tempErrors.nombreCompleto = 'Nombre completo debe contener solo letras y espacios, y tener máximo 255 caracteres.';
+        }
+
+        // Validar Nombre de la Promotoría
+        if (!formData.nombrePromotoria || formData.nombrePromotoria.length > 255) {
+            tempErrors.nombrePromotoria = 'El nombre de la promotoría debe contener máximo 255 caracteres.';
+        }
+
+        // Validar Zona
+        if (!formData.zona || formData.zona.length > 100) {
+            tempErrors.zona = 'La zona debe contener máximo 100 caracteres.';
+        }
+
+        // Validar Número de Promotoría
+        if (!/^\d{1,5}$/.test(formData.numeroPromotoria)) {
+            tempErrors.numeroPromotoria = 'Número de Promotoría debe ser un número de máximo 5 dígitos.';
         }
 
         // Validar Contraseña
@@ -58,7 +69,7 @@ const SignUpAdvisor = () => {
             console.log('Formulario válido. Enviando datos...');
 
             try {
-                const response = await fetch('/api/register-advisor', {
+                const response = await fetch('/api/register-promoter', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -72,7 +83,7 @@ const SignUpAdvisor = () => {
                     // Redirigir a la página de verificación de código
                     navigate('/verify-code', { state: { email: formData.correo } });
                 } else {
-                    alert(data.message || 'Error al registrar el asesor');
+                    alert(data.message || 'Error al registrar el promotor');
                 }
             } catch (error) {
                 console.error('Error durante el registro:', error);
@@ -86,25 +97,15 @@ const SignUpAdvisor = () => {
     return (
         <div className="App">
             <Header />
-            <div className="signupadvisor-container">
-                <div className="signupadvisor-box">
-                    <h2>Registro de Asesor</h2>
+            <div className="signup-promoter-container">
+                <div className="signup-promoter-box">
+                    <h2>Registro de Promotor</h2>
                     <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="nombreCompleto"
-                            placeholder="Nombre Completo"
-                            className="signupadvisor-input"
-                            value={formData.nombreCompleto}
-                            onChange={handleChange}
-                        />
-                        {errors.nombreCompleto && <div className="error">{errors.nombreCompleto}</div>}
-
                         <input
                             type="email"
                             name="correo"
-                            placeholder="Correo electrónico (terminación @gmail.com)"
-                            className="signupadvisor-input"
+                            placeholder="Correo Electrónico"
+                            className="signup-promoter-input"
                             value={formData.correo}
                             onChange={handleChange}
                         />
@@ -112,25 +113,55 @@ const SignUpAdvisor = () => {
 
                         <input
                             type="text"
-                            name="numeroIdentificacion"
-                            placeholder="Número de Identificación Personal"
-                            className="signupadvisor-input"
-                            value={formData.numeroIdentificacion}
+                            name="nombreCompleto"
+                            placeholder="Nombre Completo"
+                            className="signup-promoter-input"
+                            value={formData.nombreCompleto}
                             onChange={handleChange}
                         />
-                        {errors.numeroIdentificacion && <div className="error">{errors.numeroIdentificacion}</div>}
+                        {errors.nombreCompleto && <div className="error">{errors.nombreCompleto}</div>}
+
+                        <input
+                            type="text"
+                            name="nombrePromotoria"
+                            placeholder="Nombre de la Promotoría"
+                            className="signup-promoter-input"
+                            value={formData.nombrePromotoria}
+                            onChange={handleChange}
+                        />
+                        {errors.nombrePromotoria && <div className="error">{errors.nombrePromotoria}</div>}
+
+                        <input
+                            type="text"
+                            name="zona"
+                            placeholder="Zona"
+                            className="signup-promoter-input"
+                            value={formData.zona}
+                            onChange={handleChange}
+                        />
+                        {errors.zona && <div className="error">{errors.zona}</div>}
+
+                        <input
+                            type="text"
+                            name="numeroPromotoria"
+                            placeholder="Número de Promotoría"
+                            className="signup-promoter-input"
+                            value={formData.numeroPromotoria}
+                            onChange={handleChange}
+                        />
+                        {errors.numeroPromotoria && <div className="error">{errors.numeroPromotoria}</div>}
 
                         <input
                             type="password"
                             name="password"
                             placeholder="Contraseña"
-                            className="signupadvisor-input"
+                            className="signup-promoter-input"
                             value={formData.password}
                             onChange={handleChange}
                         />
                         {errors.password && <div className="error">{errors.password}</div>}
 
-                        <button type="submit" className="signupadvisor-button">Registrar</button>
+                        <button type="submit" className="signup-promoter-button">Registrarse</button>
                     </form>
                 </div>
             </div>
@@ -139,4 +170,4 @@ const SignUpAdvisor = () => {
     );
 };
 
-export default SignUpAdvisor;
+export default SignUpPromoter;

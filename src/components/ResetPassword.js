@@ -19,8 +19,8 @@ const ResetPassword = () => {
         setSuccessMessage('');
 
         try {
-            // Enviar el código al backend para verificarlo
-            const response = await fetch('/api/verify-code', {
+            // Verificar el código de verificación con el backend
+            const verifyResponse = await fetch('/api/verify-code', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -28,19 +28,33 @@ const ResetPassword = () => {
                 body: JSON.stringify({ email, verificationCode }),
             });
 
-            const data = await response.json();
+            const verifyData = await verifyResponse.json();
 
-            if (response.ok) {
-                // Aquí deberías enviar la nueva contraseña al backend para actualizarla
-                setSuccessMessage('Tu contraseña ha sido restablecida exitosamente.');
-                setTimeout(() => {
-                    navigate('/login');  // Redirige al login después de un tiempo
-                }, 2000);
+            if (verifyResponse.ok) {
+                // Si el código es correcto, actualizar la contraseña
+                const updateResponse = await fetch('/api/update-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, newPassword }),
+                });
+
+                const updateData = await updateResponse.json();
+
+                if (updateResponse.ok) {
+                    setSuccessMessage('Tu contraseña ha sido restablecida exitosamente.');
+                    setTimeout(() => {
+                        navigate('/login');  // Redirige al login después de un tiempo
+                    }, 2000);
+                } else {
+                    setError(updateData.message || 'Error al restablecer la contraseña.');
+                }
             } else {
-                setError(data.message || 'El código de verificación es incorrecto.');
+                setError(verifyData.message || 'El código de verificación es incorrecto.');
             }
         } catch (err) {
-            setError('Hubo un problema al verificar el código. Inténtalo de nuevo.');
+            setError('Hubo un problema al restablecer la contraseña. Inténtalo de nuevo.');
         }
     };
 

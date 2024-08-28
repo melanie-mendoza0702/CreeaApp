@@ -12,7 +12,7 @@ const FAQ = () => {
             <Header />
             <div className="content-container">
                 <h2>Preguntas Frecuentes de {productName}</h2>
-                <p>Aquí va la información específica de "Preguntas Frecuentes" para {productName}.</p>
+                <p>"Preguntas Frecuentes" para {productName}.</p>
             </div>
             <Footer />
         </div>

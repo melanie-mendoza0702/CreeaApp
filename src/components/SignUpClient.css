@@ -2,7 +2,7 @@
 
 .signup-container {
     background-color: var(--color-azul-navy);
-    height: 100vh; /* Ocupa toda la altura de la ventana */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,56 +10,61 @@
     color: var(--color-blanco);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* Permite desplazamiento vertical */
+    overflow-y: auto;
 }
 
 .signup-box {
     background-color: var(--color-azure);
     width: 100%;
-    max-width: 400px; /* Ancho máximo para pantallas más grandes */
-    padding: 20px 15px; /* Espaciado interno */
+    max-width: 1200px;
+    padding: 20px 15px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
     box-sizing: border-box;
-    max-height: 80vh; /* Ajustamos la altura máxima para asegurar que el botón sea visible */
-    overflow-y: auto; /* Permite desplazamiento interno si es necesario */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Ahora con dos columnas */
+    gap: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 
 .signup-box h2 {
-    font-size: 22px; /* Tamaño del título ajustado */
+    grid-column: span 2; /* El título ahora ocupa las dos columnas */
+    font-size: 22px;
     margin-bottom: 20px;
     color: var(--color-blanco);
+    text-align: center;
 }
 
-.signup-input {
+.signup-input,
+.signup-select {
+    grid-column: span 1; /* Cada input/select ocupa una columna */
     width: 100%;
-    height: 40px; /* Altura consistente para los inputs */
-    margin-bottom: 15px; /* Espaciado entre inputs */
+    height: 40px;
     border-radius: 8px;
     border: 1px solid var(--color-blanco);
     padding-left: 10px;
-    font-size: 16px; /* Tamaño de fuente ajustado */
+    margin-bottom: 20px; /* Añadido margen inferior */
+    font-size: 16px;
     color: var(--color-azul-navy);
     box-sizing: border-box;
 }
 
 .signup-input::placeholder {
-    color: #B0B0B0; /* Color del placeholder */
+    color: #B0B0B0;
 }
 
 .signup-button {
+    grid-column: span 2; /* El botón ocupa las dos columnas */
     width: 100%;
-    height: 45px; /* Altura del botón */
+    height: 45px;
     background-color: var(--color-amarillo-canario);
     border: none;
     border-radius: 8px;
-    font-size: 18px; /* Tamaño de fuente del botón */
+    font-size: 18px;
     color: var(--color-azul-navy);
     cursor: pointer;
     margin-top: 20px;
-    position: sticky; /* Botón de registro se mantiene visible */
-    bottom: 0; /* Fijamos el botón al fondo */
 }
 
 .signup-button:hover {
@@ -67,10 +72,12 @@
 }
 
 .login-link {
-    margin-top: 15px; /* Espaciado superior */
+    grid-column: span 2; /* El enlace ocupa las dos columnas */
+    margin-top: 15px;
     font-size: 14px;
     color: var(--color-blanco);
     text-decoration: none;
+    text-align: center;
 }
 
 .login-link:hover {
@@ -79,21 +86,22 @@
 
 @media (max-width: 768px) {
     .signup-box {
-        padding: 15px 10px; /* Espaciado reducido en pantallas pequeñas */
+        grid-template-columns: 1fr;
+        padding: 15px 10px;
     }
 
     .signup-input {
-        height: 35px; /* Altura reducida para inputs en pantallas pequeñas */
-        font-size: 14px; /* Fuente reducida para inputs en pantallas pequeñas */
+        height: 35px;
+        font-size: 14px;
     }
 
     .signup-button {
-        height: 40px; /* Altura reducida para el botón en pantallas pequeñas */
-        font-size: 16px; /* Fuente reducida para el botón en pantallas pequeñas */
+        height: 40px;
+        font-size: 16px;
     }
 
     .signup-box h2 {
-        font-size: 20px; /* Tamaño del título reducido en pantallas pequeñas */
+        font-size: 20px;
     }
 }
 

@@ -11,6 +11,10 @@ const ClientDashboard = () => {
         navigate('/general-info');
     };
 
+    const handleAccountClick = () => {
+        navigate('/edit-account-client');
+    };
+
     return (
         <div className="App">
             <Header />
@@ -20,7 +24,7 @@ const ClientDashboard = () => {
                 <button>Acerca de nosotros</button>
                 <button>Tipo de cambio</button>
                 <button>Quiero agendar una cita</button>
-                <button>Mi cuenta</button>
+                <button onClick={handleAccountClick}>Mi cuenta</button>
                 <button>Cerrar Sesión</button>
             </div>
             <Footer />

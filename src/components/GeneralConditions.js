@@ -12,7 +12,7 @@ const GeneralConditions = () => {
             <Header />
             <div className="content-container">
                 <h2>Condiciones Generales de {productName}</h2>
-                <p>Aquí va la información específica de "Condiciones Generales" para {productName}.</p>
+                <p>"Condiciones Generales" para {productName}.</p>
             </div>
             <Footer />
         </div>

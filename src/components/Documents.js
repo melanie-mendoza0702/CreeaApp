@@ -12,7 +12,7 @@ const Documents = () => {
             <Header />
             <div className="content-container">
                 <h2>Documentos de {productName}</h2>
-                <p>Aquí va la información específica de "Documentos" para {productName}.</p>
+                <p>"Documentos" para {productName}.</p>
             </div>
             <Footer />
         </div>

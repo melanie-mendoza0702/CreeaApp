@@ -32,7 +32,7 @@ const VerifyCode = () => {
             if (response.ok) {
                 setSuccessMessage('Código verificado exitosamente.');
                 setTimeout(() => {
-                    navigate('/login');  // Redirige al login después de un tiempo
+                    navigate('/login');  
                 }, 2000);
             } else {
                 setError(data.message || 'El código de verificación es incorrecto.');

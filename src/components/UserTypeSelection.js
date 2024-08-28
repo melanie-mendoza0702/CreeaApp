@@ -16,6 +16,10 @@ const UserTypeSelection = () => {
         navigate('/signup-advisor');
     };
 
+    const handlePromoterClick = () => {
+        navigate('/signup-promoter');
+    };
+
     return (
         <div className="App">
             <Header />
@@ -25,6 +29,7 @@ const UserTypeSelection = () => {
                     <div className="cta-buttons">
                         <button className="user-button" onClick={handleClientClick}>Soy Cliente</button>
                         <button className="user-button" onClick={handleAdvisorClick}>Soy Asesor</button>
+                        <button className="user-button" onClick={handlePromoterClick}>Soy Promotor</button>
                     </div>
                 </div>
             </div>

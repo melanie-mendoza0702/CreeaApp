@@ -12,7 +12,7 @@ const sendVerificationEmail = (email, verificationCode) => {
     const mailOptions = {
         from: 'melanie02mendozagonzalez@gmail.com',
         to: email,
-        subject: 'Recuperación de Contraseña',
+        subject: 'Codigo de Verificacion CreeaApp',
         text: `Tu código de verificación es: ${verificationCode}`
     };
 

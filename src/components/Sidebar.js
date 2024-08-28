@@ -5,9 +5,6 @@ import './Sidebar.css';
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <div className="logo">
-                <img src="../assets/logo.png" alt="Logo" />
-            </div>
             <ul className="menu">
                 <li><a href="#informacion-general">Información General</a></li>
                 <li><a href="#cuenta">Cuenta</a></li>
@@ -22,3 +19,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+

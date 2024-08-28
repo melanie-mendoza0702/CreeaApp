@@ -44,7 +44,7 @@ const ForgotPassword = () => {
             <div className="forgot-password-container">
                 <div className="forgot-password-box">
                     <h2>¿Olvidaste tu contraseña?</h2>
-                    <p>Ingresa tu email y te enviaremos un link para reestablecerla</p>
+                    <p>Ingresa tu email y te enviaremos un codigo de verificación</p>
                     <form onSubmit={handleSubmit}>
                         <input
                             type="email"

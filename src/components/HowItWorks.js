@@ -12,7 +12,7 @@ const HowItWorks = () => {
             <Header />
             <div className="content-container">
                 <h2>¿Cómo funciona {productName}?</h2>
-                <p>Aquí va la información específica de "¿Cómo funciona?" para {productName}.</p>
+                <p>"¿Cómo funciona?" para {productName}.</p>
             </div>
             <Footer />
         </div>

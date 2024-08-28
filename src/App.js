@@ -9,6 +9,7 @@ import ResetPassword from './components/ResetPassword';
 import VerifyCode from './components/VerifyCode';
 import SignUpAdvisor from './components/SignUpAdvisor';
 import SignUpClient from './components/SignUpClient';
+import SignUpPromoter from './components/SignUpPromoter';
 import Sidebar from './components/Sidebar';
 import ClientHome from './components/ClientDashboard';
 import GeneralInfo from './components/GeneralInfo';
@@ -19,6 +20,7 @@ import HowItWorks from './components/HowItWorks';
 import GeneralConditions from './components/GeneralConditions';
 import FAQ from './components/FAQ';
 import Documents from './components/Documents';
+import EditAccountClient from './components/EditAccount';
 
 import './App.css';
 
@@ -32,6 +34,7 @@ function App() {
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup-advisor" element={<SignUpAdvisor />} />
           <Route path="/signup-client" element={<SignUpClient />} />
+          <Route path="/signup-promoter" element={<SignUpPromoter />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/verify-code" element={<VerifyCode />} />
@@ -44,6 +47,7 @@ function App() {
           <Route path="/product/:productName/general-conditions" element={<GeneralConditions />} />
           <Route path="/product/:productName/faq" element={<FAQ />} />
           <Route path="/product/:productName/documents" element={<Documents />} />
+          <Route path="/edit-account-client" element={<EditAccountClient />} />
 
           {/* Rutas que incluyen el Sidebar */}
           <Route 
