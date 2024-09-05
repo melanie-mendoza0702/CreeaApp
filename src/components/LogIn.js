@@ -13,7 +13,7 @@ const LogIn = () => {
     const handleLogin = async () => {
         if (username && password) {
             try {
-                const response = await fetch('/api/login', {  // Aquí solo usa la ruta relativa
+                const response = await fetch('/api/login', {  
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const LogIn = () => {
                         navigate('/client-home');
                     } else if (userType === 'asesor') {
                         navigate('/advisor-home');
-                    } else if (userType === 'promotor') {
+                    } else if (userType === 'promotor/administrador') { // Cambié la condición a 'promotor/administrador'
                         navigate('/promoter-home');
                     }
                 } else {
@@ -43,6 +43,7 @@ const LogIn = () => {
             alert('Por favor, ingrese su usuario y contraseña.');
         }
     };
+    
 
     const handleRegisterClick = () => {
         navigate('/user-type-selection');

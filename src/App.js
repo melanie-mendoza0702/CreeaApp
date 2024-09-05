@@ -10,8 +10,9 @@ import VerifyCode from './components/VerifyCode';
 import SignUpAdvisor from './components/SignUpAdvisor';
 import SignUpClient from './components/SignUpClient';
 import SignUpPromoter from './components/SignUpPromoter';
-import Sidebar from './components/Sidebar';
 import ClientHome from './components/ClientDashboard';
+import AdvisorHome from './components/AdvisorDashboard';
+import PromoterHome from './components/PromoterDashboard';
 import GeneralInfo from './components/GeneralInfo';
 import Products from './components/Products';
 import ProductDetail from './components/ProductDetail';
@@ -21,6 +22,9 @@ import GeneralConditions from './components/GeneralConditions';
 import FAQ from './components/FAQ';
 import Documents from './components/Documents';
 import EditAccountClient from './components/EditAccount';
+import Pizarra from './components/Pizarra';
+
+
 
 import './App.css';
 
@@ -39,6 +43,8 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/verify-code" element={<VerifyCode />} />
           <Route path="/client-home" element={<ClientHome />} />
+          <Route path="/advisor-home" element={<AdvisorHome />} />
+          <Route path="/promoter-home" element={<PromoterHome />} />
           <Route path="/general-info" element={<GeneralInfo />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product-detail/:productName" element={<ProductDetail />} />
@@ -48,28 +54,8 @@ function App() {
           <Route path="/product/:productName/faq" element={<FAQ />} />
           <Route path="/product/:productName/documents" element={<Documents />} />
           <Route path="/edit-account-client" element={<EditAccountClient />} />
+          <Route path="/pizarra" element={<Pizarra />} />
 
-          {/* Rutas que incluyen el Sidebar */}
-          <Route 
-            path="/dashboard/*" 
-            element={
-              <div className="dashboard-container">
-                <Sidebar />
-                <div className="content">
-                  {/* Aquí puedes definir subrutas específicas del dashboard */}
-                  <Routes>
-                    {/* Ejemplo de subrutas */}
-                    <Route path="informacion-general" element={<div>Información General</div>} />
-                    <Route path="cuenta" element={<div>Cuenta</div>} />
-                    <Route path="agenda-calendario" element={<div>Agenda/Calendario</div>} />
-                    <Route path="pizarron-interactivo" element={<div>Pizarrón Interactivo</div>} />
-                    <Route path="mis-seguros" element={<div>Mis Seguros</div>} />
-                    <Route path="mis-pagos" element={<div>Mis Pagos</div>} />
-                  </Routes>
-                </div>
-              </div>
-            } 
-          />
         </Routes>
       </div>
     </Router>

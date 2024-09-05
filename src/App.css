@@ -1,19 +1,26 @@
 /* src/App.css */
 
-/* Definición de variables para la paleta de colores */
+/* Importa las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Definición de variables para la nueva paleta de colores */
 :root {
   --color-azul-navy: #01274D;
   --color-azure: #337BC2;
-  --color-azul-tiffany: #29CFC5;
-  --color-amarillo-canario: #FFFF00;
+  --color-azul-tiffany: #592bef;
+  --color-amarillo-canario: #592bef;
   --color-blanco: #FFFFFF;
+  --color-background:#0232fe; 
+  --color-gradient-start: #00f; 
+  --color-gradient-end: #f0f; /* Termina el gradiente (morado) */
 }
 
 /* Estilos globales */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--color-azul-navy);
+  font-family: 'Roboto', sans-serif; /* Texto general con Roboto */
+  background-color: var(--color-background);
+  background: url('./assets/background.jpg') no-repeat center center/cover;
   color: var(--color-blanco);
 }
 
@@ -22,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 60vh;
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto como fuente base */
 }
 
 .App-header,
@@ -36,23 +44,31 @@ body {
   align-items: center;
 }
 
-/* Estilo para botones */
+/* Botones Glassmorphism */
 button {
-  font-size: 20px;
-  padding: 10px 20px;
-  background-color: var(--color-amarillo-canario);
-  color: var(--color-azul-navy);
+  font-size: 18px;
+  padding: 15px 30px;
+  color: white;
   border: none;
-  border-radius: 8px; /* Esquinas redondeadas */
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  font-family: 'Orbitron', sans-serif; /* Aplicar Orbitron a los botones */
 }
 
 button.secondary {
-  background-color: var(--color-azul-tiffany);
+  background: rgba(41, 207, 197, 0.1);
+  border: 1px solid rgba(41, 207, 197, 0.18);
 }
 
 button:hover {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
 /* Estilo para los enlaces */
@@ -72,11 +88,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Orbitron', sans-serif; /* Aplicar Orbitron al header */
 }
 
 header h1 {
   font-size: 50px;
   margin: 0;
+  font-family: 'Orbitron', sans-serif; /* Títulos con Orbitron */
 }
 
 header nav ul {
@@ -108,6 +126,7 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  font-family: 'Roboto', sans-serif; /* Aplicar Roboto al footer */
 }
 
 footer p {
@@ -130,12 +149,14 @@ footer a:hover {
   justify-content: center;
   align-items: center;
   padding: 50px;
+  font-family: 'Roboto', sans-serif; /* Texto de contenido con Roboto */
 }
 
 .home-page h2,
 .user-type-box h2 {
-  font-size: 35px;
+  font-size: 50px;
   margin-bottom: 20px;
+  font-family: 'Noto Serif Devanagari', serif; /* Títulos de secciones con Noto Serif Devanagari */
 }
 
 .home-page p {

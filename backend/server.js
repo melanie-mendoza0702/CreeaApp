@@ -4,10 +4,29 @@ const sendVerificationEmail = require('./sendVerificationEmail');
 const db = require('./db');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
+const http = require('http'); // Añadido para Socket.IO
+const socketIo = require('socket.io'); // Añadido para Socket.IO
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// Configura CORS para permitir solicitudes desde tu frontend en localhost:3000
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Crear servidor HTTP
+const server = http.createServer(app);
+
+// Integrar Socket.IO con el servidor HTTP
+const io = socketIo(server, {
+    cors: {
+        origin: 'http://localhost:3000',
+        methods: ['GET', 'POST']
+    }
+});
 
 let verificationCodes = {};
 
@@ -15,6 +34,19 @@ let verificationCodes = {};
 const generateVerificationCode = () => {
     return Math.floor(100000 + Math.random() * 900000).toString(); // Genera un código de 6 dígitos
 };
+
+// Configuración de Socket.IO para el pizarrón interactivo
+io.on('connection', (socket) => {
+    console.log('Nuevo cliente conectado al pizarrón');
+
+    socket.on('drawing', (data) => {
+        socket.broadcast.emit('drawing', data);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Cliente desconectado del pizarrón');
+    });
+});
 
 // Ruta para registrar un nuevo cliente
 app.post('/api/register-client', (req, res) => {
@@ -440,7 +472,8 @@ app.post('/api/register-promoter', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+server.listen(PORT, () => { // Cambiado de app.listen a server.listen
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
+
 

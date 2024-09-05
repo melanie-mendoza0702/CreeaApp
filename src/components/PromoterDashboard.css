@@ -1,0 +1,180 @@
+/* src/components/PromoterDashboard.css */
+
+.promoter-dashboard {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../assets/background.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-blanco);
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  /* Header */
+  header {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para destacar el header */
+    color: var(--color-blanco);
+    z-index: 1;
+  }
+  
+  /* Secciones principales */
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+  }
+  
+  /* Sección izquierda (Mi cuenta, Productos, Asesores, etc.) */
+  .left-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Estilos para los contenedores */
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Agregando bordes */
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave para que los contenedores resalten */
+  }
+  
+  /* Productos */
+  .products-section {
+    display: flex;
+    flex-direction: column; /* Mantiene los botones y la información alineados verticalmente */
+  }
+  
+  .product-options {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones de los productos se mantengan en fila */
+    margin-bottom: 20px; /* Espacio debajo de los botones */
+  }
+  
+  .product-options button {
+    margin: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: var(--color-blanco);
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .product-info {
+    margin-top: 10px; /* Agrega un espacio entre los botones y la información */
+    font-size: 16px;
+    color: var(--color-blanco);
+  }
+  
+  /* Asesores */
+  .advisors-section {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordes */
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left; /* Alinea todo el contenido de asesores a la izquierda */
+  }
+  
+  .advisor {
+    cursor: pointer;
+    color: var(--color-blanco);
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordes para cada asesor */
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacio entre asesores */
+    font-weight: bold; /* Negritas */
+  }
+  
+  .clients-list {
+    list-style: none;
+    padding-left: 20px; /* Añade un pequeño margen a la lista de clientes */
+  }
+  
+  /* Renovaciones */
+  .renewals-section {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordes */
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  /* Modal para el Chatbot */
+.chatbot-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .chatbot-modal-content {
+    background: var(--color-background); /* Fondo del modal */
+    padding: 20px;
+    border-radius: 15px;
+    width: 500px;
+    height: 600px;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--color-blanco);
+  }
+  
+  
+  /* Botones principales (Presentaciones, Agendar Evento, Asistente Virtual) */
+  button {
+    font-size: 18px;
+    padding: 15px 30px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--color-azul-navy);
+    padding: 20px;
+    text-align: center;
+    color: var(--color-blanco);
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5); /* Borde superior */
+  }
+  

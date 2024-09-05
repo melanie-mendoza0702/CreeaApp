@@ -1,48 +1,62 @@
-/* src/components/UserTypeSelection.css */
+/* Importa las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
+/* Estilos para el contenedor principal */
 .user-type-container {
-    background-color: var(--color-azul-navy);
-     display: flex;
+    background: url('../assets/background.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    height: 100vh; /* Cubrir toda la pantalla */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;    
     color: var(--color-blanco);
     padding: 20px;
+    font-family: 'Roboto', sans-serif; /* Aplicar Roboto al texto general */
 }
 
+/* Estilos para la caja de selección */
 .user-type-box {
-    background-color: var(--color-azure);
-    width: 500px; /* Reducimos un poco el ancho para mejor proporción */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 500px; /* Ancho ajustado */
     padding: 40px;
     border-radius: 20px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+/* Estilo del título */
 .user-type-box h2 {
-    font-size: 24px; /* Tamaño más pequeño y balanceado */
+    font-size: 30px; /* Tamaño ajustado */
     margin-bottom: 30px;
     color: var(--color-blanco);
+    font-family: 'Orbitron', sans-serif; /* Aplicar Orbitron al título */
 }
 
+/* Estilos para los botones */
 .cta-buttons {
     display: flex;
     justify-content: space-around;
-    gap: 20px; /* Añadimos un poco de espacio entre los botones */
+    gap: 20px; /* Espacio entre botones */
     margin-top: 20px;
 }
 
+/* Estilos de los botones con texto blanco */
 .user-button {
     width: 150px;
-    height: 65px; /* Ajuste de altura para mejor proporción */
-    background-color: var(--color-amarillo-canario);
-    border: none;
+    height: 65px; /* Ajuste de altura */
+    background: rgba(41, 207, 197, 0.1); /* Fondo semitransparente */
+    border: 1px solid rgba(41, 207, 197, 0.18); /* Borde con el color tiffany */
     border-radius: 8px; /* Esquinas redondeadas */
     font-size: 18px;
-    color: var(--color-azul-navy);
+    color: var(--color-blanco); /* Texto en blanco */
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .user-button:hover {
-    opacity: 0.8;
+    background-color: rgba(41, 207, 197, 0.3); /* Fondo tiffany más pronunciado al hacer hover */
+    transform: scale(1.05);
+    color: var(--color-blanco); /* Mantener el texto en blanco */
 }

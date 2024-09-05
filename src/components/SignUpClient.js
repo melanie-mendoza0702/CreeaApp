@@ -168,7 +168,7 @@ const SignUpClient = () => {
                             onChange={handleChange}
                         />
                         {errors.nombreCompleto && <div className="error">{errors.nombreCompleto}</div>}
-                        
+
                         <input
                             type="text"
                             name="fechaNacimiento"
@@ -270,39 +270,7 @@ const SignUpClient = () => {
                             onChange={handleChange}
                         >
                             <option value="">Entidad Federativa de nacimiento</option>
-                            <option value="Aguascalientes">Aguascalientes</option>
-                            <option value="Baja California">Baja California</option>
-                            <option value="Baja California Sur">Baja California Sur</option>
-                            <option value="Campeche">Campeche</option>
-                            <option value="Chiapas">Chiapas</option>
-                            <option value="Chihuahua">Chihuahua</option>
-                            <option value="Coahuila">Coahuila</option>
-                            <option value="Colima">Colima</option>
-                            <option value="Durango">Durango</option>
-                            <option value="Guanajuato">Guanajuato</option>
-                            <option value="Guerrero">Guerrero</option>
-                            <option value="Hidalgo">Hidalgo</option>
-                            <option value="Jalisco">Jalisco</option>
-                            <option value="México">México</option>
-                            <option value="Michoacán">Michoacán</option>
-                            <option value="Morelos">Morelos</option>
-                            <option value="Nayarit">Nayarit</option>
-                            <option value="Nuevo León">Nuevo León</option>
-                            <option value="Oaxaca">Oaxaca</option>
-                            <option value="Puebla">Puebla</option>
-                            <option value="Querétaro">Querétaro</option>
-                            <option value="Quintana Roo">Quintana Roo</option>
-                            <option value="San Luis Potosí">San Luis Potosí</option>
-                            <option value="Sinaloa">Sinaloa</option>
-                            <option value="Sonora">Sonora</option>
-                            <option value="Tabasco">Tabasco</option>
-                            <option value="Tamaulipas">Tamaulipas</option>
-                            <option value="Tlaxcala">Tlaxcala</option>
-                            <option value="Veracruz">Veracruz</option>
-                            <option value="Yucatán">Yucatán</option>
-                            <option value="Zacatecas">Zacatecas</option>
-                            <option value="CDMX">Ciudad de México (CDMX)</option>
-                            <option value="Nacionalizado">Nacionalizado</option>
+                            {/* Lista de opciones */}
                         </select>
                         {errors.entidadFederativa && <div className="error">{errors.entidadFederativa}</div>}
 
@@ -337,7 +305,7 @@ const SignUpClient = () => {
                             <option value="Sí">Sí</option>
                         </select>
                         {errors.habitosToxicos && <div className="error">{errors.habitosToxicos}</div>}
-                        
+
                         {formData.habitosToxicos === 'Sí' && (
                             <>
                                 <input
@@ -361,7 +329,7 @@ const SignUpClient = () => {
                             onChange={handleChange}
                         />
                         {errors.password && <div className="error">{errors.password}</div>}
-
+                    
                         <button type="submit" className="signup-button">Registrarse</button>
                     </form>
                 </div>

@@ -1,44 +1,45 @@
-/* src/components/SignUpClient.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap'); /* Importa la fuente Orbitron */
 
 .signup-container {
-    background-color: var(--color-azul-navy);
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--color-blanco);
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
+    height: 100vh;
+    background-image: url('../assets/background.jpg'); /* Asegúrate de que la imagen esté en la ruta correcta */
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto; /* Permite el desplazamiento vertical en caso de que el contenido sea más alto que el contenedor */
 }
 
 .signup-box {
-    background-color: var(--color-azure);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     width: 100%;
-    max-width: 1200px;
+    max-width: 500px; /* Ajusta el tamaño máximo del formulario */
     padding: 20px 15px;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Ahora con dos columnas */
-    gap: 20px;
-    max-height: 80vh;
-    overflow-y: auto;
+    margin: 10px 0; /* Añade un margen superior e inferior para evitar que esté demasiado cerca de los bordes */
+    max-height: 85vh; /* Limita la altura máxima y permite que se desplace si es necesario */
+    overflow-y: auto; /* Habilita el desplazamiento interno si el contenido es demasiado alto */
 }
 
 .signup-box h2 {
-    grid-column: span 2; /* El título ahora ocupa las dos columnas */
-    font-size: 22px;
+    font-size: 30px;
     margin-bottom: 20px;
     color: var(--color-blanco);
+    font-family: 'Orbitron', sans-serif;
     text-align: center;
 }
 
 .signup-input,
 .signup-select {
-    grid-column: span 1; /* Cada input/select ocupa una columna */
     width: 100%;
     height: 40px;
     border-radius: 8px;
@@ -50,19 +51,15 @@
     box-sizing: border-box;
 }
 
-.signup-input::placeholder {
-    color: #B0B0B0;
-}
-
+/* Botón de registro */
 .signup-button {
-    grid-column: span 2; /* El botón ocupa las dos columnas */
     width: 100%;
     height: 45px;
     background-color: var(--color-amarillo-canario);
     border: none;
     border-radius: 8px;
     font-size: 18px;
-    color: var(--color-azul-navy);
+    color: var(--color-blanco);
     cursor: pointer;
     margin-top: 20px;
 }
@@ -72,7 +69,6 @@
 }
 
 .login-link {
-    grid-column: span 2; /* El enlace ocupa las dos columnas */
     margin-top: 15px;
     font-size: 14px;
     color: var(--color-blanco);
@@ -84,30 +80,24 @@
     color: var(--color-azul-tiffany);
 }
 
+/* Diseño responsivo para dispositivos pequeños */
 @media (max-width: 768px) {
     .signup-box {
-        grid-template-columns: 1fr;
-        padding: 15px 10px;
+        max-width: 100%;
+        padding: 20px 15px;
     }
 
     .signup-input {
-        height: 35px;
+        height: 40px;
         font-size: 14px;
     }
 
     .signup-button {
-        height: 40px;
+        height: 45px;
         font-size: 16px;
     }
 
     .signup-box h2 {
         font-size: 20px;
     }
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-bottom: 10px;
-    text-align: left;
 }

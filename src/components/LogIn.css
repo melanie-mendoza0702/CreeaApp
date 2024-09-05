@@ -1,69 +1,54 @@
-/* src/components/LogIn.css */
+/* Importa las fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Serif+Devanagari:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
+/* Estilos para el contenedor del Login */
 .login-container {
-    background-color: var(--color-azul-navy);
-    height: 60vh;
+    background: url('../assets/background.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    height: 100vh; /* Cambiar a 100vh para cubrir toda la pantalla */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: var(--color-blanco);
+    font-family: 'Roboto', sans-serif; /* Aplicar Roboto al texto del login */
 }
 
+/* Estilos para la caja del Login con Glassmorphism */
 .login-box {
-    background-color: var(--color-azure);
-    width: 400px; /* Ajustamos el ancho a 400px */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 400px; /* Ancho ajustado */
     padding: 40px;
     border-radius: 20px; /* Esquinas redondeadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Estilo del título de Login */
 .login-box h2 {
-    font-size: 36px; /* Ajustamos el tamaño del texto para el título */
+    font-size: 36px; /* Tamaño ajustado */
     margin-bottom: 30px;
     color: var(--color-blanco);
+    font-family: 'Orbitron', sans-serif; /* Aplicar Orbitron al título */
 }
 
+/* Estilos para los inputs de texto */
 .login-input {
-    width: 100%; /* Usamos el 100% del ancho disponible */
+    width: 100%; /* Usar el 100% del ancho disponible */
     height: 40px;
     margin-bottom: 20px;
     border-radius: 8px;
     border: none;
     padding-left: 10px;
-    font-size: 18px; /* Ajustamos el tamaño de la fuente */
+    font-size: 18px; /* Tamaño ajustado */
     color: var(--color-azul-navy);
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
 }
 
-.login-button {
-    width: 100%; /* Usamos el 100% del ancho disponible */
-    height: 45px;
-    background-color: var(--color-amarillo-canario);
-    border: none;
-    border-radius: 8px;
-    font-size: 20px;
-    color: var(--color-azul-navy);
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.forgot-password {
-    margin-top: 20px;
-    font-size: 14px; /* Ajustamos el tamaño del texto */
-    color: var(--color-blanco);
-    text-decoration: none;
-}
-
-.register-link {
-    margin-top: 10px;
-    font-size: 14px; /* Ajustamos el tamaño del texto */
-    color: var(--color-blanco);
-    text-decoration: none;
-}
-
+/* Estilos para el select */
 .login-select {
     width: 100%;
     height: 45px;
@@ -73,4 +58,51 @@
     padding-left: 10px;
     font-size: 18px;
     color: var(--color-azul-navy);
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+/* Estilos para el botón de Login */
+.login-button {
+    width: 100%; /* Usar el 100% del ancho disponible */
+    height: 45px;
+    background-color: var(--color-amarillo-canario);
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    color: var(--color-blanco);
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Orbitron', sans-serif; /* Aplicar Orbitron al botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: rgba(136, 13, 236, 0.532);
+    transform: scale(1.05);
+}
+
+/* Estilos para el enlace de "Olvidaste tu contraseña" */
+.forgot-password {
+    margin-top: 20px;
+    font-size: 14px; /* Tamaño ajustado */
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+.forgot-password:hover {
+    color: var(--color-azul-tiffany);
+}
+
+/* Estilos para el enlace de registro */
+.register-link {
+    margin-top: 10px;
+    font-size: 14px; /* Tamaño ajustado */
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+}
+
+.register-link:hover {
+    color: var(--color-azul-tiffany);
 }

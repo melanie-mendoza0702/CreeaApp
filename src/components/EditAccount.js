@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import Sidebar from './Sidebar'; 
 import './EditAccount.css';
 
 const EditAccount = () => {
@@ -94,7 +93,6 @@ const EditAccount = () => {
         <div className="App">
             <Header />
             <div className="edit-account-container">
-                <Sidebar /> {/* Menú lateral */}
                 <div className="edit-account-content">
                     <div className="profile-header">
                         <div className="profile-info">
